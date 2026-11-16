@@ -9,7 +9,8 @@
     <meta name="theme-color" content="#f7f8fa">
     <link rel="canonical" href="{{ .Permalink }}">
     <link rel="icon" href="{{ "favicon.svg" | relURL }}" type="image/svg+xml">
-    <link rel="stylesheet" href="{{ "style.css" | relURL }}">
+    {{ $styles := resources.Get "css/main.css" | minify }}
+    <style>{{ $styles.Content | safeCSS }}</style>
 </head>
 
 <body>

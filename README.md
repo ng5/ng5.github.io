@@ -16,7 +16,7 @@ Run `/usr/bin/hugo --minify` and deploy the generated `public/` directory.
 - `content/`: Services, About, and Contact text.
 - `layouts/home.html`: home page content.
 - `layouts/baseof.html`: shared navigation and footer.
-- `static/style.css`: responsive styling.
+- `assets/css/main.css`: responsive styling.
 
 Service descriptions are starter copy; review them against the company's actual offering before publishing. No qualifications, clients, or regulatory status are claimed.
 
@@ -35,3 +35,5 @@ One-time setup:
 The workflow uses the Pages URL supplied by GitHub, including the configured custom domain or repository subpath. Subsequent pushes to `main` deploy automatically. No second repository or generated-code branch is needed.
 
 References: https://gohugo.io/host-and-deploy/deploy-to-github-pages/ and https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site
+
+The small stylesheet is minified and inlined into each page at build time to avoid a render-blocking CSS request.
