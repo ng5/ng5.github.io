@@ -1,0 +1,9 @@
+baseURL = 'https://ng5solutions.co.uk'
+locale = 'en-GB'
+title = 'Ng5 Solutions Ltd'
+disableKinds = ['taxonomy', 'term', 'RSS', 'sitemap']
+
+[params]
+  companyNumber = '07250248'
+  description = 'Specialist consulting for fixed income analytics, retail portfolio tracking and optimization, and backend services. Ng5 Solutions Ltd.'
+  email = 'contact@ng5solutions.co.uk'

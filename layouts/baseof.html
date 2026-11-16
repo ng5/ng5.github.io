@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en-GB">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ if .IsHome }}{{ site.Title }} — IT Consulting{{ else }}{{ .Title }} | {{ site.Title }}{{ end }}</title>
+    <meta name="description" content="{{ .Description | default site.Params.description }}">
+    <meta name="theme-color" content="#f7f8fa">
+    <link rel="canonical" href="{{ .Permalink }}">
+    <link rel="icon" href="{{ "favicon.svg" | relURL }}" type="image/svg+xml">
+    <link rel="stylesheet" href="{{ "style.css" | relURL }}">
+</head>
+
+<body>
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="shell"><a class="brand" href="{{ site.Home.RelPermalink }}"
+            aria-label="Ng5 Solutions Ltd home">{{ site.Title }}</a>
+        <nav aria-label="Main navigation">{{ $current := . }}{{ range slice (dict "title" "Home" "path" "/") (dict
+            "title" "Services" "path" "/services/") (dict "title" "About" "path" "/about/") (dict "title" "Contact"
+            "path" "/contact/") }}{{ $page := site.GetPage .path }}<a href="{{ $page.RelPermalink }}" {{ if eq
+                $current.RelPermalink $page.RelPermalink }} aria-current="page" {{ end }}>{{ .title }}</a>{{ end }}
+        </nav>
+    </header>
+    <main id="main" class="shell">{{ block "main" . }}{{ end }}</main>
+    <footer class="shell">
+        <p>© {{ now.Year }} {{ site.Title }}<br><span>Company number {{ site.Params.companyNumber }}</span></p><a
+            href="https://find-and-update.company-information.service.gov.uk/company/{{ site.Params.companyNumber }}">Companies
+            House ↗</a>
+    </footer>
+</body>
+
+</html>

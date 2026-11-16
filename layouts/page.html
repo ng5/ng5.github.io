@@ -1,0 +1,9 @@
+{{ define "main" }}<article class="page">
+    <p class="eyebrow">{{ .Params.eyebrow | default "Ng5 Solutions Ltd" }}</p>
+    <h1>{{ .Title }}</h1>{{ with .Params.intro }}<p class="lead">{{ . }}</p>{{ end }}<div class="prose">{{ .Content }}
+    </div>{{ if eq .File.ContentBaseName "contact" }}{{ with site.Params.email }}<a class="button"
+        href="mailto:{{ . }}">{{ . }}</a>{{ else }}<div class="contact-status">
+        <h2>Contact information</h2>
+        <p>Our public contact details will be available here soon.</p>
+    </div>{{ end }}{{ end }}
+</article>{{ end }}

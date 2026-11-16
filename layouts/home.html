@@ -1,0 +1,26 @@
+{{ define "main" }}
+{{ $services := site.GetPage "/services" }}
+{{ $about := site.GetPage "/about" }}
+{{ $contact := site.GetPage "/contact" }}
+<section class="hero">
+    <p class="eyebrow">Specialist financial software</p>
+    <h1>Financial analytics.<br>Purpose-built software.</h1>
+    <p class="lead">Specialist software for fixed income analytics, retail portfolio tracking and optimization, and low
+        latency backend services.</p>
+    <a class="button" href="{{ $services.RelPermalink }}">Explore our services <span aria-hidden="true">→</span></a>
+</section>
+<section class="overview">
+    <div>
+        <p class="eyebrow">Our focus</p>
+        <h2>Financial expertise.<br>Practical software.</h2>
+    </div>
+    <div>
+        <p>We build software to analyse bonds, track investments, and compare portfolio choices, alongside the services
+            that bring financial data to web and mobile applications.</p>
+        <a href="{{ $about.RelPermalink }}">About Ng5 Solutions Ltd →</a>
+    </div>
+</section>
+<section class="callout">
+    <h2>Discuss your financial software project.</h2><a href="{{ $contact.RelPermalink }}">Contact us →</a>
+</section>
+{{ end }}
