@@ -1,7 +1,8 @@
-baseURL = 'https://ng5solutions.co.uk'
+baseURL = 'https://ng5solutions.co.uk/'
 locale = 'en-GB'
 title = 'Ng5 Solutions Ltd'
-disableKinds = ['taxonomy', 'term', 'RSS', 'sitemap']
+disableKinds = ['taxonomy', 'term', 'RSS']
+enableRobotsTXT = true
 
 [params]
   companyNumber = '07250248'
